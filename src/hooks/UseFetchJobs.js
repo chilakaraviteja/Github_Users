@@ -6,13 +6,12 @@ const ACTIONS = {
   GET_DATA: "get-data",
   ERROR: "error",
 };
-// /https://jobs.github.com/positions.json?description=python&full_time=true&location=sf///
-const BASE_URL =
-  "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+// /https://jobs.github.com/positions.json?description=python&full_time=true&location=sf///https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json
+const BASE_URL ="https://cors-anywhere.herokuapp.com/https://api.github.com/users/example";
 
 function reducer(state, action) {
   switch (action.type) {
-    case "MAKE_REQUES4T":
+    case "MAKE_REQUEST":
       return { loading: false };
     case "GET_DATA":
       return { ...state, loading: false, jobs: action.payload.jobs };
